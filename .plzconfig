@@ -7,3 +7,13 @@
 ; when you change it all users will automatically get updated.
 ; [please]
 ; version = 14.1.5
+
+[build]
+path = /usr/local/bin:/usr/bin:/bin
+path = ~/.cargo/bin
+
+[buildconfig]
+rust-toolchain = //third_party/rust:toolchain
+
+[go]
+importpath = github.com/brent-soles/monorepo
