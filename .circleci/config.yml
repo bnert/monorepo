@@ -8,9 +8,9 @@ jobs:
       - checkout
 
       - run:
-        name: Greeting
-        command: echo "hello"
+          name: Greeting
+          command: echo "hello"
 
       - run:
-        name: Date
-        command: date
+          name: Date
+          command: date
