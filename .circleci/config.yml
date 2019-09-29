@@ -9,12 +9,4 @@ jobs:
 
       - run:
           name: Install Please
-          command: apt-get install curl && curl https://get.please.build | bash
-
-      - run:
-          name: Source Files
-          command: source ~/.profile && source ~/.bashrc
-
-      - run:
-          name: Build Projects
-          command: plz build
+          command: curl https://get.please.build | bash
