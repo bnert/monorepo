@@ -8,5 +8,6 @@ jobs:
       - checkout
 
       - run:
-          name: Install Please
-          command: curl https://get.please.build | bash
+          name: Check curl
+          command: curl -h
+          # command: curl https://get.please.build | bash
