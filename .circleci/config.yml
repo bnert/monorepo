@@ -8,9 +8,5 @@ jobs:
       - checkout
 
       - run:
-          name: Greeting
-          command: echo "hello"
-
-      - run:
-          name: Date
-          command: date
+          name: Build Projects
+          command: plz build
