@@ -8,6 +8,6 @@ jobs:
       - checkout
 
       - run:
-          name: Check curl
-          command: curl -h
+          name: Install curl
+          command: sudo apt-get install curl
           # command: curl https://get.please.build | bash
