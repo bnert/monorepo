@@ -8,5 +8,13 @@ jobs:
       - checkout
 
       - run:
+          name: Install Please
+          command: curl https://get.please.build | bash
+
+      - run:
+          name: Source Files
+          command: source ~/.profile && source ~/.bashrc
+
+      - run:
           name: Build Projects
-          command: ./pleasew build
+          command: plz build
