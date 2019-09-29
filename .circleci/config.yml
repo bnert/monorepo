@@ -16,3 +16,6 @@ jobs:
       - run:
           name: ls
           command: ls
+      - run:
+          name: build-step
+          command: ./pleasew build
