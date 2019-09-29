@@ -10,3 +10,6 @@ jobs:
       - run:
           name: Echo
           command: echo "This step isn't very useful"
+      - run:
+          name: pwd
+          command: pwd
