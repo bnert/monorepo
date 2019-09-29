@@ -9,13 +9,4 @@ jobs:
 
       - run:
           name: Echo
-          command: echo "This step isn't very useful"
-      - run:
-          name: pwd
-          command: pwd
-      - run:
-          name: ls
-          command: ls
-      - run:
-          name: build-step
-          command: ./pleasew build
+          command: echo "TODO: Build custom docker w/ Please on it"
