@@ -8,6 +8,5 @@ jobs:
       - checkout
 
       - run:
-          name: Install curl
-          command: sudo apt-get install curl
-          # command: curl https://get.please.build | bash
+          name: Echo
+          command: echo "This step isn't very useful"
