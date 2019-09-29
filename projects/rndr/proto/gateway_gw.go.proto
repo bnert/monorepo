@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package gateway_proto;
+
+message Test {
+  string msg = 1;
+}
