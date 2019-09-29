@@ -9,7 +9,7 @@ jobs:
 
       - run:
           name: Install Please
-          command: curl https://get.please.build | bash
+          command: apt-get install curl && curl https://get.please.build | bash
 
       - run:
           name: Source Files
