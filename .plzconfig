@@ -12,6 +12,10 @@
 path = /usr/local/bin:/usr/bin:/bin
 path = ~/.cargo/bin
 
+[cpp]
+CppTool = clang++
+DefaultOptCppFlags = --std=c++11 -O3 -DNDEBUG -Wall -Werror -pthread
+
 [buildconfig]
 rust-toolchain = //third_party/rust:toolchain
 
