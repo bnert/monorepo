@@ -21,7 +21,17 @@ fn serve_music_file(res: &mut Response<Body>, filename: String) {
     let mut buffer: Vec<u8> = vec![];
     match file.read_to_end(&mut buffer) {
         Ok(_) => {
-            res.headers_mut().insert("content-type", hyper::http::HeaderValue::from_static("application/octet-stream"));
+            match(file_path) {
+                ref path if path.contains(".wav") => {
+                    res.headers_mut().insert("content-type", hyper::http::HeaderValue::from_static("audio/wave"));
+                },
+                ref path if path.contains(".mp3") => {
+                    res.headers_mut().insert("content-type", hyper::http::HeaderValue::from_static("audio/mp3"));
+                },
+                _ => {
+                    res.headers_mut().insert("content-type", hyper::http::HeaderValue::from_static("application/octet-stream"));
+                }
+            }
             *res.body_mut() = Body::from(buffer);
             *res.status_mut() = StatusCode::OK;
         },
