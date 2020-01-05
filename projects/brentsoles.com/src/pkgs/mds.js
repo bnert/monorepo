@@ -1,27 +1,13 @@
 const grammar = {
   el: 'directive content',
   directive: {
-    '': {
-      tag: 'p',
-      plural: false,
-      term: /\n\n/,
-      pre: /\n/,
-      post: /\n/
-    },
     '#': {
       tag: 'h',
       plural: true,
       term: /\s/,
       pre: /[\n]{0,1}/,
-      post: /[\#\s]/
+      post: /[#|\s]/
     },
-    '`': {
-      tag: 'code',
-      plural: true,
-      term: /\n/,
-      pre: /\n/,
-      post: /[\`\s]/
-    }
   }
 }
 
@@ -35,6 +21,8 @@ const isDirective = (char, pre, post) => {
 const parse = (
   mdString
 ) => {
+  console.log(mdString.includes('\n'))
+
   let htmlString = ''
 
   for(let i = 0; i < mdString.length; i++) {
@@ -57,7 +45,7 @@ const parse = (
       do {
         htmlString += mdString[i]
         i++
-      } while(mdString[i] !== '\n' && i < mdString.length)
+      } while(mdString[i] !== '\n' || i >= mdString.length)
 
       htmlString += `</${tag}${plural ? inc : ''}>`
       if (mdString[i] === '\n') {
@@ -65,9 +53,6 @@ const parse = (
       }
     }
 
-    if(mdString[i] !== undefined) {
-      htmlString += mdString[i]
-    }
   }
   return htmlString
 }
