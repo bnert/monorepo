@@ -57,9 +57,7 @@ fn serve_file(req: Request<Body>) -> BoxedFuture {
 }
 
 
-
 fn main() {
-    println!("Hello, world!");
     let addr = ([127, 0, 0, 1], 3000).into();
     let server = Server::bind(&addr)
         .serve(|| {

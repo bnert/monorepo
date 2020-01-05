@@ -1,2 +1,5 @@
 # Please output directory
 plz-out
+
+**/**/*.o
+**/debug/*
